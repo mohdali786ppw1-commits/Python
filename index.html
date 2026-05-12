@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>May 13 ✦</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Allura&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+-webkit-tap-highlight-color:transparent;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:#000;
+overflow-x:hidden;
+color:white;
+}
+
+/* BACKGROUND */
+
+body::before{
+content:'';
+position:fixed;
+inset:0;
+background:
+linear-gradient(to bottom,
+rgba(0,0,0,.7),
+rgba(0,0,0,.96)),
+url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=2070&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+z-index:-2;
+}
+
+body::after{
+content:'';
+position:fixed;
+inset:0;
+background:
+radial-gradient(circle at top,
+rgba(229,9,20,.25),
+transparent 45%);
+z-index:-1;
+}
+
+/* FLOATING LIGHTS */
+
+.light{
+position:fixed;
+width:6px;
+height:6px;
+border-radius:50%;
+background:#ff4d55;
+box-shadow:0 0 15px #ff4d55;
+opacity:.5;
+pointer-events:none;
+animation:float 10s linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh) scale(.5);
+opacity:0;
+}
+20%{
+opacity:.7;
+}
+100%{
+transform:translateY(-120vh) scale(1.2);
+opacity:0;
+}
+}
+
+/* PASSWORD PAGE */
+
+.password-page{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+padding:20px;
+text-align:center;
+}
+
+.logo{
+font-family:'Bebas Neue',sans-serif;
+font-size:100px;
+letter-spacing:5px;
+color:#e50914;
+text-shadow:
+0 0 40px rgba(229,9,20,.5);
+}
+
+.subtitle{
+margin-top:-10px;
+font-size:14px;
+letter-spacing:5px;
+opacity:.7;
+}
+
+.lock{
+font-size:65px;
+margin:40px 0 25px;
+animation:bounce 3s infinite;
+}
+
+@keyframes bounce{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-10px);
+}
+}
+
+.password-box{
+width:100%;
+max-width:340px;
+}
+
+.password-input{
+width:100%;
+height:60px;
+border:none;
+outline:none;
+border-radius:18px;
+padding:0 20px;
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.08);
+color:white;
+font-size:18px;
+text-align:center;
+backdrop-filter:blur(12px);
+transition:.3s;
+}
+
+.password-input:focus{
+border-color:#e50914;
+box-shadow:
+0 0 25px rgba(229,9,20,.3);
+}
+
+.password-btn{
+width:100%;
+height:60px;
+margin-top:18px;
+border:none;
+border-radius:18px;
+background:
+linear-gradient(145deg,#ff2d35,#b6000d);
+font-size:16px;
+font-weight:600;
+letter-spacing:1px;
+color:white;
+cursor:pointer;
+transition:.3s;
+box-shadow:
+0 10px 25px rgba(229,9,20,.35);
+}
+
+.password-btn:hover{
+transform:translateY(-3px);
+}
+
+.password-btn:active{
+transform:scale(.96);
+}
+
+.error{
+margin-top:15px;
+font-size:14px;
+color:#ff8383;
+opacity:0;
+transition:.3s;
+}
+
+/* MAIN PAGE */
+
+.main{
+display:none;
+padding:25px 18px 100px;
+animation:fade .8s ease;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.hero{
+margin-top:40px;
+text-align:center;
+}
+
+.hero-title{
+font-family:'Allura',cursive;
+font-size:95px;
+line-height:1;
+text-shadow:
+0 0 25px rgba(229,9,20,.4);
+}
+
+.hero-sub{
+margin-top:15px;
+letter-spacing:4px;
+font-size:13px;
+opacity:.7;
+}
+
+/* CARDS */
+
+.cards{
+margin-top:55px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:22px;
+}
+
+.card{
+position:relative;
+height:380px;
+overflow:hidden;
+border-radius:28px;
+cursor:pointer;
+transition:
+transform .45s cubic-bezier(.2,.8,.2,1),
+box-shadow .4s ease;
+border:1px solid rgba(255,255,255,.08);
+background:#111;
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.03);
+box-shadow:
+0 25px 50px rgba(0,0,0,.65),
+0 0 40px rgba(229,9,20,.2);
+}
+
+.card:active{
+transform:scale(.97);
+}
+
+.card img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:transform .8s ease;
+}
+
+.card:hover img{
+transform:scale(1.08);
+}
+
+.card::before{
+content:'';
+position:absolute;
+inset:0;
+background:
+linear-gradient(to top,
+rgba(0,0,0,.96),
+transparent 60%);
+z-index:1;
+}
+
+.card-title{
+position:absolute;
+left:22px;
+bottom:38px;
+z-index:2;
+font-family:'Bebas Neue',sans-serif;
+font-size:42px;
+letter-spacing:2px;
+}
+
+.card-desc{
+position:absolute;
+left:22px;
+bottom:18px;
+z-index:2;
+font-size:13px;
+opacity:.8;
+}
+
+/* MODALS */
+
+.modal{
+position:fixed;
+inset:0;
+background:
+radial-gradient(circle at top,
+rgba(229,9,20,.12),
+transparent 30%),
+rgba(0,0,0,.92);
+backdrop-filter:blur(20px);
+display:none;
+align-items:center;
+justify-content:center;
+padding:18px;
+z-index:999;
+animation:fade .4s ease;
+}
+
+.modal.active{
+display:flex;
+}
+
+.modal-box{
+width:100%;
+max-width:900px;
+border-radius:30px;
+overflow:hidden;
+background:#0c0c0c;
+border:1px solid rgba(255,255,255,.08);
+box-shadow:
+0 25px 80px rgba(0,0,0,.75);
+position:relative;
+}
+
+.close{
+position:absolute;
+top:18px;
+right:18px;
+width:42px;
+height:42px;
+border:none;
+border-radius:50%;
+background:rgba(255,255,255,.08);
+color:white;
+font-size:18px;
+cursor:pointer;
+z-index:10;
+}
+
+/* LETTER */
+
+.letter-wrap{
+display:flex;
+flex-wrap:wrap;
+}
+
+.letter-photo{
+flex:1;
+min-width:280px;
+height:580px;
+position:relative;
+overflow:hidden;
+}
+
+.letter-photo img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.letter-photo::after{
+content:'';
+position:absolute;
+inset:0;
+background:
+linear-gradient(to top,
+rgba(0,0,0,.7),
+transparent 50%);
+}
+
+.photo-tag{
+position:absolute;
+bottom:20px;
+left:20px;
+z-index:2;
+padding:10px 18px;
+border-radius:999px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(10px);
+font-size:12px;
+letter-spacing:2px;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.letter-content{
+flex:1;
+min-width:280px;
+padding:55px 40px;
+position:relative;
+background:
+linear-gradient(
+180deg,
+#111,
+#050505
+);
+overflow:hidden;
+}
+
+.letter-content::before{
+content:'';
+position:absolute;
+inset:0;
+background:
+linear-gradient(
+135deg,
+rgba(255,255,255,.03),
+transparent 40%);
+pointer-events:none;
+}
+
+.letter-title{
+font-family:'Allura',cursive;
+font-size:65px;
+color:#ff4048;
+margin-bottom:25px;
+}
+
+.letter-text{
+font-size:16px;
+line-height:1.9;
+opacity:.9;
+}
+
+.mini-quote{
+margin-top:28px;
+padding:18px;
+border-left:2px solid #ff4048;
+background:rgba(255,255,255,.03);
+border-radius:16px;
+font-size:14px;
+line-height:1.7;
+font-style:italic;
+}
+
+.signature{
+margin-top:28px;
+font-family:'Allura',cursive;
+font-size:44px;
+color:#ff4048;
+}
+
+/* MUSIC */
+
+.music-box{
+padding:55px 30px;
+text-align:center;
+position:relative;
+overflow:hidden;
+}
+
+.music-box::before{
+content:'';
+position:absolute;
+width:500px;
+height:500px;
+border-radius:50%;
+background:
+radial-gradient(circle,
+rgba(229,9,20,.15),
+transparent 70%);
+top:-250px;
+left:50%;
+transform:translateX(-50%);
+animation:pulse 5s infinite;
+}
+
+@keyframes pulse{
+0%,100%{
+transform:translateX(-50%) scale(1);
+}
+50%{
+transform:translateX(-50%) scale(1.1);
+}
+}
+
+.disk{
+width:240px;
+height:240px;
+border-radius:50%;
+margin:auto;
+position:relative;
+background:
+radial-gradient(circle,#222 18%,transparent 19%),
+repeating-radial-gradient(circle,#0e0e0e 0 4px,#000 5px 8px);
+border:6px solid #1c1c1c;
+box-shadow:
+0 0 50px rgba(229,9,20,.18),
+0 15px 40px rgba(0,0,0,.7);
+animation:spin 5s linear infinite paused;
+}
+
+.disk.playing{
+animation-play-state:running;
+}
+
+@keyframes spin{
+from{
+transform:rotate(0);
+}
+to{
+transform:rotate(360deg);
+}
+}
+
+.disk::before{
+content:'';
+position:absolute;
+width:58px;
+height:58px;
+border-radius:50%;
+background:#e50914;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+}
+
+.song{
+margin-top:30px;
+font-family:'Bebas Neue',sans-serif;
+font-size:50px;
+letter-spacing:2px;
+}
+
+.artist{
+margin-top:5px;
+font-size:13px;
+letter-spacing:3px;
+opacity:.7;
+}
+
+.wave{
+margin-top:28px;
+display:flex;
+justify-content:center;
+align-items:flex-end;
+gap:5px;
+height:50px;
+}
+
+.bar{
+width:5px;
+border-radius:20px;
+background:
+linear-gradient(to top,
+#e50914,
+#ff666d);
+animation:wave 1s infinite ease-in-out;
+}
+
+.bar:nth-child(1){height:15px;animation-delay:.1s;}
+.bar:nth-child(2){height:28px;animation-delay:.2s;}
+.bar:nth-child(3){height:42px;animation-delay:.3s;}
+.bar:nth-child(4){height:25px;animation-delay:.4s;}
+.bar:nth-child(5){height:38px;animation-delay:.5s;}
+.bar:nth-child(6){height:20px;animation-delay:.6s;}
+.bar:nth-child(7){height:45px;animation-delay:.7s;}
+
+@keyframes wave{
+0%,100%{
+transform:scaleY(.5);
+opacity:.5;
+}
+50%{
+transform:scaleY(1.2);
+opacity:1;
+}
+}
+
+.progress{
+width:100%;
+height:6px;
+background:rgba(255,255,255,.08);
+border-radius:20px;
+margin-top:30px;
+overflow:hidden;
+}
+
+.progress-fill{
+width:35%;
+height:100%;
+background:
+linear-gradient(90deg,#ff2d35,#ff5a5f);
+}
+
+.song-quote{
+margin-top:26px;
+font-size:14px;
+line-height:1.8;
+opacity:.75;
+font-style:italic;
+}
+
+.controls{
+display:flex;
+justify-content:center;
+margin-top:28px;
+}
+
+.play-btn{
+width:85px;
+height:85px;
+border:none;
+border-radius:50%;
+background:
+linear-gradient(145deg,#ff2d35,#b6000d);
+font-size:34px;
+color:white;
+cursor:pointer;
+transition:.3s;
+box-shadow:
+0 12px 35px rgba(229,9,20,.45);
+}
+
+.play-btn:hover{
+transform:scale(1.08);
+}
+
+.play-btn:active{
+transform:scale(.92);
+}
+
+/* GALLERY */
+
+.gallery{
+padding:30px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:18px;
+}
+
+.gallery-item{
+position:relative;
+overflow:hidden;
+border-radius:24px;
+}
+
+.gallery-item img{
+width:100%;
+height:280px;
+object-fit:cover;
+transition:.45s;
+cursor:pointer;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.gallery-item:hover img{
+transform:scale(1.08) rotate(-1deg);
+box-shadow:
+0 20px 45px rgba(0,0,0,.7),
+0 0 30px rgba(229,9,20,.2);
+}
+
+.gallery-item::after{
+content:'MAY 13 ✦';
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+padding:18px;
+font-size:12px;
+letter-spacing:3px;
+background:
+linear-gradient(to top,
+rgba(0,0,0,.9),
+transparent);
+opacity:0;
+transition:.4s;
+}
+
+.gallery-item:hover::after{
+opacity:1;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+.hero-title{
+font-size:70px;
+}
+
+.logo{
+font-size:75px;
+}
+
+.song{
+font-size:38px;
+}
+
+.disk{
+width:190px;
+height:190px;
+}
+
+.play-btn{
+width:72px;
+height:72px;
+font-size:28px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- FLOATING LIGHTS -->
+
+<div class="light" style="left:10%;animation-duration:12s;"></div>
+<div class="light" style="left:25%;animation-duration:9s;"></div>
+<div class="light" style="left:40%;animation-duration:11s;"></div>
+<div class="light" style="left:65%;animation-duration:13s;"></div>
+<div class="light" style="left:82%;animation-duration:10s;"></div>
+
+<!-- PASSWORD PAGE -->
+
+<div class="password-page" id="passwordPage">
+
+<div class="logo">MAY 13</div>
+
+<div class="subtitle">
+A SMALL SURPRISE FOR YOU
+</div>
+
+<div class="lock">🔒</div>
+
+<div class="password-box">
+
+<input
+type="password"
+class="password-input"
+id="password"
+placeholder="Enter Secret Code"
+/>
+
+<button class="password-btn" onclick="unlock()">
+OPEN THE SURPRISE ✦
+</button>
+
+<div class="error" id="error">
+wrong password...
+</div>
+
+</div>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="main" id="mainPage">
+
+<div class="hero">
+
+<div class="hero-title">
+Happy May 13
+</div>
+
+<div class="hero-sub">
+MADE WITH LOVE, MUSIC & MEMORIES
+</div>
+
+</div>
+
+<!-- CARDS -->
+
+<div class="cards">
+
+<div class="card" onclick="openModal('letterModal')">
+
+<img src="Home.jpg">
+
+<div class="card-title">
+LETTER
+</div>
+
+<div class="card-desc">
+open your little message
+</div>
+
+</div>
+
+<div class="card" onclick="openModal('galleryModal')">
+
+<img src="Gallery.jpg">
+
+<div class="card-title">
+MEMORIES
+</div>
+
+<div class="card-desc">
+our favorite moments
+</div>
+
+</div>
+
+<div class="card" onclick="openModal('musicModal')">
+
+<img src="Music.jpg">
+
+<div class="card-title">
+MUSIC
+</div>
+
+<div class="card-desc">
+the song of this night
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- LETTER MODAL -->
+
+<div class="modal" id="letterModal">
+
+<div class="modal-box">
+
+<button class="close" onclick="closeModal('letterModal')">
+✕
+</button>
+
+<div class="letter-wrap">
+
+<div class="letter-photo">
+
+<img src="Saibaali.jpg">
+
+<div class="photo-tag">
+OUR LITTLE MEMORY ✦
+</div>
+
+</div>
+
+<div class="letter-content">
+
+<div class="letter-title">
+To You PS5✦
+</div>
+
+<div class="letter-text">
+
+Happy May 13 ❤️<br><br>
+
+I made this little place just for you.
+i know that much is not engough for u but i try too give u every 
+happiness you deserve u are the most important person in my life i really LOVE
+youuuuuu soooooooooooo muchhhhhhhhh my princesss
+A tiny world filled with music,
+memories and feelings that words
+sometimes fail to explain.<br><br>
+
+Maybe this is just a website,
+but every detail here was made
+thinking about you.<br><br>
+
+I hope this day becomes one of those
+moments you never forget. i loveeeeee uuuuuu sooooooo muchhhhhhh mwahhhhhhhh
+
+<div class="mini-quote">
+“Some people arrive quietly,
+yet somehow become your favorite
+part of life.”
+</div>
+
+<div class="signature">
+— yours forever
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- MUSIC MODAL -->
+
+<div class="modal" id="musicModal">
+
+<div class="modal-box">
+
+<button class="close" onclick="closeModal('musicModal')">
+✕
+</button>
+
+<div class="music-box
+
+<div class="disk" id="disk"></div>
+
+<div class="maitera.mp3">
+MAIN TERA
+</div>
+
+<div class="artist">
+YOUR MAY 13 SONG
+</div>
+
+<div class="wave">
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+</div>
+
+<div class="progress">
+<div class="progress-fill"></div>
+</div>
+
+<div class="song-quote">
+“Every second of this song
+feels like you.”
+</div>
+
+<div class="controls">
+
+<button class="play-btn" onclick="toggleMusic()" id="playBtn">
+▶
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- GALLERY -->
+
+<div class="modal" id="galleryModal">
+
+<div class="modal-box">
+
+<button class="close" onclick="closeModal('galleryModal')">
+✕
+</button>
+
+<div class="gallery">
+
+<div class="gallery-item">
+<img src="Saiba1.jpg">
+</div>
+
+<div class="gallery-item">
+<img src="Saiba2.jpg">
+</div>
+
+<div class="gallery-item">
+<img src="Saiba.jpg">
+</div>
+
+<div class="gallery-item">
+<img src="Saibaa.jpg">
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const PASSWORD = "0513";
+
+function unlock(){
+
+const value =
+document.getElementById('password').value;
+
+const error =
+document.getElementById('error');
+
+if(value === PASSWORD){
+
+document.getElementById('passwordPage')
+.style.display='none';
+
+document.getElementById('mainPage')
+.style.display='block';
+
+}else{
+
+error.style.opacity='1';
+
+setTimeout(()=>{
+error.style.opacity='0';
+},2000);
+
+}
+
+}
+
+/* ENTER KEY */
+
+document
+.getElementById('password')
+.addEventListener('keypress',function(e){
+
+if(e.key==='Enter'){
+unlock();
+}
+
+});
+
+/* MODALS */
+
+function openModal(id){
+
+document
+.getElementById(id)
+.classList.add('active');
+
+}
+
+function closeModal(id){
+
+document
+.getElementById(id)
+.classList.remove('active');
+
+}
+
+/* MUSIC */
+
+let playing=false;
+
+function toggleMusic(){
+
+const disk =
+document.getElementById('disk');
+
+const btn =
+document.getElementById('playBtn');
+
+playing=!playing;
+
+if(playing){
+
+disk.classList.add('playing');
+
+btn.innerHTML='❚❚';
+
+}else{
+
+disk.classList.remove('playing');
+
+btn.innerHTML='▶';
+
+}
+
+}
+
+</script>
+<audio id="bg-music" autoplay loop>
+  <source src="Maitera.mp3" type="audio/mp3">
+</audio>
+</body>
+</html>
